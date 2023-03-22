@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/medica/accidente" method = 'POST'>
+        <span>Tipo Vehiculo</span><br>
+        <select name="tipo_vehiculo" id="">
+            <option value="Vehiculo">Vehiculo</option>
+            <option value="Vehiculo contra Vehiculo">Vehiculo contra Vehiculo</option>
+            <option value="Vehiculo contra Moto">Vehiculo contra Moto</option>
+            <option value="Vehiculo contra Peaton">Vehiculo contra Peaton</option>
+        </select><br>
+        <span>Tipo de Choque</span><br>
+        <select name="tipo_choque" id="">
+            <option value="Vuelco 90 grados">Vuelco 90 grados</option>
+            <option value="Vuelco completo">Vuelco completo</option>
+            <option value="Choque frontal">Choque frontal</option>
+            <option value="Choque lateral izquierdo">Choque lateral izquierdo</option>
+            <option value="Choque lateral derecho">Choque lateral derecho</option>
+            <option value="Choque trasero">Choque trasero</option>
+        </select><br>
+        <span>Cantidad de personas</span><br>
+        <select name="cantidad_personas" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br>
+        <span>Atrapados</span><br>
+        <select name="atrapados" id="">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select><br>
+        <span>Lesiones Visibles</span><br>
+        <input name="lesiones_visibles" type="text"><br>
+        <span>Peligro de Incendio</span><br>
+        <select name="peligro_incendio" id="">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select><br>
+        <button>Enviar</button>
+    </form>
+    <!-- <a href=""><button>Vehiculo </button></a>
+    <a href=""><button>Vehiculo contra Vehiculo</button></a>
+    <a href=""><button>Vehiculo contra Moto</button></a>
+    <a href=""><button>Vehiculo contra Peaton</button></a> -->
+{% endblock  %}

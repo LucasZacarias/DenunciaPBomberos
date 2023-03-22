@@ -1,0 +1,32 @@
+<!-- {% extends 'base.html' %}
+
+{% block content %} -->
+
+    {% for dato in datos  %}
+    <script>
+        window.addEventListener('load', function() {
+            // Aquí va el código que quieres que se ejecute después de cargar la página
+            let fecha_anterior = new Date("{{ dato.fecha.isoformat() if dato.fecha else '' }}");
+            // Obtener la hora actual del navegador
+            let fecha_actual = new Date();
+        
+            // Calcular la diferencia de tiempo en minutos
+            var diferencia_minutos = Math.round((fecha_actual - fecha_anterior) / 60000);
+        
+            // Mostrar la diferencia de tiempo en el HTML
+            document.getElementById('{{ dato.id }}').innerHTML = 'Hace ' + diferencia_minutos + ' minutos.';
+        });
+    </script>
+        // Obtener la fecha anterior del servidor
+    
+    <h4>Accidente de transito</h4>
+    <p>Tipo de vehiculo: {{dato.tipo_vehiculo}}</p><br> 
+    <p>Tipo de choque:{{dato.tipo_choque}}</p><br>
+    <p>Lesiones Visibles {{dato.lesiones_visibles}}</p><br>
+    <p>Fecha de denuncia: {{dato.fecha}}</p>
+    <p id="{{ dato.id }}" ></p>
+    {% endfor %}    
+{% endblock  %}
+
+
+    
