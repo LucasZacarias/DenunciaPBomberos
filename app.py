@@ -69,7 +69,7 @@ def bombero():
 def alertas():
     return render_template('alertas.html')
 
-@app.route('/en_proceso')
+@app.route('/en_proceso') 
 def en_proceso():
     datos = Accidente_Transito.query.all()
     # datosleibles = jsonify(datos)
